@@ -1,67 +1,169 @@
+/* Grundläggande stilar för hemsidan */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
+    margin: 0; /* Tar bort marginaler */
+    padding: 0; /* Tar bort padding */
+    overflow-x: hidden; /* Hindrar överskridande av innehåll horisontellt */
+}
+
+#grid_wrapper1 {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 65px 500px 450px minmax(100px, 1fr);
+    grid-template-areas:
+    "header"
+    "nav"
+    "bsec"
+    "1sec1"
+    "foo"
+    ;
+}
+
+#grid_wrapper2 {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 65px 300px 450px minmax(100px, 1fr);
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "gbs2 gbs1 gbs3"
+    "gsec1 gsec1 gsec1"
+    "foo foo foo"
+    ;
+}
+header {
+    grid-area: header;
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
+}
+
+nav {
+    grid-area: nav;
+    background-color: #333;
     color: #fff;
-    text-decoration: none;
-  }
-  
-  main {
     padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
+    display: flex; /* Använd flexbox för att placera länkarna */
+    justify-content: center; /* Centrera horisontellt */
+    align-items: center; /* Centrera vertikalt */
+    margin: 0;
+    
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Använd flexbox för att placera länkarna bredvid varandra */
+    
+}
+
+nav ul li {
+    margin-left: 40px; /* Lägg till mellanrum mellan länkarna */
+    
+}
+
+nav ul li :hover{
+    color: aqua;
+    font-size: 1.5rem;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Ingen marginal för första länken */
+    
+}
+#section1 {
     text-align: center;
-  }
-  
-  section#bildsektion img {
-    display: block;
-    max-width: 100%; /* Bilden kommer inte att bli bredare än dess föräldreelement */
-    height: auto; /* Behåll bildens proportioner */
-  }
-  
-  /* Layout för grensidan */
-  section#grensektioner {
-    display: flex; /* Använd flexbox för att placera sektionerna bredvid varandra */
-    flex-wrap: wrap; /* Låt sektionerna gå ned på nya rader vid behov */
-  }
-  
-  section#grensektioner section {
-    flex: 1 1 30%; /* Se till att sektionerna är lika breda och tar upp en tredjedel av bredden */
-    min-width: 300px; /* Se till att sektionerna inte blir för smala */
-  }
-  
-  section#grensektioner section img {
-    max-width: 100%; /* Sätt maximal bredd för bilderna */
-    height: auto; /* Behåll bildens proportioner */
-  }
-  
-  /* Footer */
-  footer {
+    background-color: #ddd;
+    padding: 20px;
+    grid-area: 1sec1;
+}
+
+section img {
+    width: 100%; /* Bredden av bilden kommer att sträcka sig till kanten av föräldraelementet */
+    height: auto;
+    display: block; /* Se till att bilden är ett blockelement för att undvika eventuell oönskad luft runt den */
+}
+
+#gbs1{
+    grid-area: gbs1;
+
+    margin: 0;
+    padding: 0;
+}
+
+#gbs2{
+    grid-area: gbs2;
+
+    margin: 0; /* Tar bort marginaler */
+    padding: 0;
+}
+
+#gbs3{
+grid-area: gbs3;
+
+    margin: 0; /* Tar bort marginaler */
+    padding: 0;
+}
+#gbs1 :hover{
+    color: aqua;
+
+
+}
+#bild1{
+    padding: 15px;
+    border-radius: 10%;
+    width: 90%;
+    height: 90%;
+}
+
+#bild2{
+    padding: 15px;
+    border-radius: 10%;
+    width: 90%;
+    height: 90%;
+
+}
+
+#bild3{
+    padding: 15px;
+    border-radius: 10%;
+    width: 90%;
+    height: 90%;
+
+}
+
+#tavlingsbeskrivning{
+    grid-area: gsec1;
+    text-align: center;
+    background-color: #ddd;
+    padding: 20px;
+}
+
+
+
+footer {
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-  }
+    grid-area: foo;
+}
+
+/* Anpassningar för bildsektion på startsidan */
+#bildsektion {
+    width: 100%; /* Bredden på sektionen är samma som hela skärmens bredd */
+    height: auto;
+    margin: 0; /* Tar bort marginaler */
+    padding: 0; /* Tar bort padding */
+    grid-area: bsec;
+}
