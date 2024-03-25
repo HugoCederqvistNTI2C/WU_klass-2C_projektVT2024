@@ -10,7 +10,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 65px 500px 450px minmax(100px, 1fr);
+    grid-template-rows: 80px 65px 500px 300px minmax(100px, 1fr);
     grid-template-areas:
     "header"
     "nav"
@@ -31,6 +31,19 @@ body {
     "gbs2 gbs1 gbs3"
     "gsec1 gsec1 gsec1"
     "foo foo foo"
+    ;
+}
+
+#grid_wrapper3 {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 65px 500px minmax(100px, 1fr);
+    grid-template-areas:
+    "header"
+    "nav"
+    "3sec1"
+    "foo"
     ;
 }
 header {
@@ -83,9 +96,15 @@ nav ul li:first-child {
 }
 #section1 {
     text-align: center;
-    background-color: #ddd;
+    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
     padding: 20px;
     grid-area: 1sec1;
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Position it at 50% from the top */
+    left: 50%; /* Position it at 50% from the left */
+    transform: translate(-50%, -15%); /* Center it horizontally and vertically */
+    z-index: 1; /* Ensure it's above the image */
+    border-radius: 20%;
 }
 
 section img {
@@ -159,11 +178,40 @@ footer {
     grid-area: foo;
 }
 
-/* Anpassningar för bildsektion på startsidan */
 #bildsektion {
-    width: 100%; /* Bredden på sektionen är samma som hela skärmens bredd */
+    width: 100%;
     height: auto;
-    margin: 0; /* Tar bort marginaler */
-    padding: 0; /* Tar bort padding */
+    margin: 0;
+    padding: 0;
     grid-area: bsec;
 }
+#oversec1{
+    text-align: center;
+    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
+    padding: 20px;
+    margin-left: 15%;
+
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Position it at 50% from the top */
+    left: 50%; /* Position it at 50% from the left */
+    transform: translate(-180%, -15%); /* Center it horizontally and vertically */
+    z-index: 1; /* Ensure it's above the image */
+    border-radius: 20%;
+
+
+}
+
+#oversec2{
+    text-align: center;
+    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
+    padding: 20px;
+    margin-right: 15%;
+
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Position it at 50% from the top */
+    left: 50%; /* Position it at 50% from the left */
+    transform: translate(35%, -15%); /* Center it horizontally and vertically */
+    z-index: 1; /* Ensure it's above the image */
+    border-radius: 20%;
+}
+
