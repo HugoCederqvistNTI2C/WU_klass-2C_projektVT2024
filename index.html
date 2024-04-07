@@ -6,26 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
 <body>
+
   <div id="grid_wrapper1">
     <header>
       <h1>Välkommen till GKK - Styrkelyftklubb</h1>
     </header>
       <nav>
-        <ul>
-          <li><a href="index.html">Startsida</a></li>
-          <li><a href="grenar.html">Grenar</a></li>
-          <li><a href="provtraning.html">Prova på</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+        <ul class="menu">
+          <li><a class="menuItem" href="index.html">Startsida</a></li>
+          <li><a class="menuItem" href="grenar.html">Grenar</a></li>
+          <li><a class="menuItem" href="provtraning.html">Prova på</a></li>
+          <li><a class="menuItem" href="kontakt.html">Kontakt</a></li>
         </ul>
+        <button class="hamburger">
+          
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon">close</i>
+        </button>
+
       </nav>
 
     <section id="bildsektion">
-      <img src="img/klubb_bild.jpg" alt="GKK Klubb Bild">
+      <img src="img/klubb_bild.jpg" alt="GKK Klubb Bild" id="start_bild">
+      
     </section>
 
-    <section id="section1">
+      <section id="section1">
       <h2>Kommande Event</h2>
         <h3>Nationella Styrkelyftmästerskapet</h3>
         <p>Stockholm, Sverige (18 Mars, 2024): Det internationella styrkelyftförbundet (IPF) har idag tillkännagivit att Världsmästerskapen i Styrkelyft 2024 kommer att flyttas från Moskva, Ryssland till Stockholm, Sverige. Beslutet togs på grund av den pågående konflikten i Ukraina och säkerhetsrisken för idrottare och publik.</p>
@@ -35,15 +47,14 @@
         <h2>Vad är Styrkelyft?</h2>
         <p>Styrkelyft är en styrkesport som består av tre grenar: knäböj, bänkpress och marklyft.</p>
         <p>Målet med styrkelyft är att lyfta så mycket vikt som möjligt inom varje gren, och den totala summan av de tre lyften ger det totala resultatet.</p>
-
-      <h2>Vad är Styrkelyft?</h2>
-      <p>Styrkelyft är en styrkesport som består av tre grenar: knäböj, bänkpress och marklyft.</p>
-      <p>Målet med styrkelyft är att lyfta så mycket vikt som möjligt inom varje gren, och den totala summan av de tre lyften ger det totala resultatet.</p>
     </section>
+
+
 
     <footer>
       <p>&copy; 2024 GKK - Styrkelyftklubb</p>
     </footer>
   </div>
+  <script src="js/hamburgare.js"></script>
 </body>
 </html>

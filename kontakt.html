@@ -6,26 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - GKK</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
+    <div id="grid_wrapper4">
     <header>
       <h1>Kontakt</h1>
-      <nav>
-        <ul>
-            <li><a href="index.html">Startsida</a></li>
-            <li><a href="grenar.html">Grenar</a></li>
-            <li><a href="provtraning.html">Prova på</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
     </header>
-    <section>
-      <h2>Kontakta oss</h2>
-      <p>För frågor eller mer information, kontakta oss via nedanstående kontaktuppgifter.</p>
-      <!-- Lägg till kontaktinformation -->
+      <nav>
+        <ul class="menu">
+          <li><a class="menuItem" href="index.html">Startsida</a></li>
+          <li><a class="menuItem" href="grenar.html">Grenar</a></li>
+          <li><a class="menuItem" href="provtraning.html">Prova på</a></li>
+          <li><a class="menuItem" href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <button class="hamburger">
+          
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon">close</i>
+        </button>
+
+      </nav>
+      
+      <section id="kont">
+        <p>
+        Oavsett om du har frågor, feedback eller förslag, är vi här för att lyssna och hjälpa till på bästa möjliga sätt.
+      </p>
+      <p>
+        Adress: 123 Huvudgatan, 12345 Stad, Land
+      </p>
+      </section>
+
+    <section id="ksec1">
+      <img src="img/kbild1.png" alt="bild på telefon kontakt" id="tel">
     </section>
+
+    <section id="ksec3">
+      <p id="kont_text1">
+        För frågor via telefon, vänligen ring: +46 123 456 789. Vi är tillgängliga måndag till fredag, 9:00 - 17:00.
+      </p>
+      
+
+    </section>
+
+    <section id="ksec2">
+      <img src="img/kbild2.png" alt="bild på kontakt telefon" id="mail">
+      </section>
+
+      <section id="ksec4">
+        <p id="kont_text2">
+          För snabb och smidig kommunikation via mejl, skicka till: [email protected] Vi strävar efter att svara så fort som möjligt under våra öppettider.
+        </p>
+      
+
+    </section>
+
     <footer>
       <p>&copy; 2024 GKK - Styrkelyftklubb</p>
     </footer>
+  </div>
+  <script src="js/hamburgare.js"></script>
+
   </body>
   </html>

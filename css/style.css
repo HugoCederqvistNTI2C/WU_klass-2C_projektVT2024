@@ -1,120 +1,222 @@
-/* Grundläggande stilar för hemsidan */
+*{
+    box-sizing: border-box;
+}
+
+p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0; /* Tar bort marginaler */
-    padding: 0; /* Tar bort padding */
-    overflow-x: hidden; /* Hindrar överskridande av innehåll horisontellt */
+
+    margin: 0; 
+    padding: 0;
+    overflow-x: hidden;
 }
 
 #grid_wrapper1 {
+    background-color: #333;
     display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 65px 500px 300px minmax(100px, 1fr);
+    grid-template-rows: 80px 10px 500px auto minmax(100px, 1fr);
     grid-template-areas:
     "header"
     "nav"
     "bsec"
-    "1sec1"
+    "backg"
     "foo"
     ;
 }
 
 #grid_wrapper2 {
     display: grid;
+    background-color: #333;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80px 65px 300px 450px minmax(100px, 1fr);
+    grid-template-rows: 80px 10px auto 300px minmax(100px, 1fr);
     grid-template-areas:
     "header header header"
     "nav nav nav"
-    "gbs2 gbs1 gbs3"
     "gsec1 gsec1 gsec1"
+    "gbs3 gbs2 gbs1"
     "foo foo foo"
     ;
 }
 
 #grid_wrapper3 {
     display: grid;
+    background-color: #333;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 10px 500px auto minmax(100px, 1fr);
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "psec1 psec1"
+    "ose1 ose2"
+    "foo foo"
+    ;
+}
+
+#grid_wrapper4 {
+    display: grid;
+    background-color: #333;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 10px auto 450px auto minmax(100px, 1fr);
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "kont kont"
+    "ksec1 ksec2"
+    "ksec3 ksec4"
+    "foo foo"
+    ;
+}
+
+#grid_wrapper5 {
+    background-color: #333;
+    display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 65px 500px minmax(100px, 1fr);
+    grid-template-rows: 80px 10px auto auto minmax(100px, 1fr);
     grid-template-areas:
     "header"
     "nav"
-    "3sec1"
+    "marb"
+    "mart"
     "foo"
     ;
 }
+
+
+
 header {
     grid-area: header;
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 20px;
     text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+
 }
 
 nav {
     grid-area: nav;
     background-color: #333;
-    color: #fff;
+    color:white;
     padding: 20px;
-    display: flex; /* Använd flexbox för att placera länkarna */
-    justify-content: center; /* Centrera horisontellt */
-    align-items: center; /* Centrera vertikalt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
+    font-family: "Open Sans", sans-serif;
+
     
+
+
 }
 
 nav ul {
-    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Använd flexbox för att placera länkarna bredvid varandra */
+
+
     
 }
 
-nav ul li {
-    margin-left: 40px; /* Lägg till mellanrum mellan länkarna */
-    
-}
 
-nav ul li :hover{
+
+nav ul li a:hover {
     color: aqua;
-    font-size: 1.5rem;
-
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: white;
-}
-
-nav ul li:first-child {
-    margin-left: 0; /* Ingen marginal för första länken */
+    background-color: black;
     
+}
+
+
+.menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menuItem:hover {
+    text-decoration: underline;
+  }
+  
+  .hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .closeIcon {
+    display: none;
+  }
+  
+  .menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: black;
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+    width: auto;
+  }
+  
+  .showMenu {
+    transform: translateY(0);
+  }
+
+#bildsektion {
+    grid-area: bsec;
+
+}
+
+#start_bild{
+    width: 100%;
+    height: auto;
+
+
+}
+#backg{
+    background-color: #333;
+    grid-area: backg;
 }
 #section1 {
-    text-align: center;
-    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
-    padding: 20px;
-    grid-area: 1sec1;
-    position: absolute; /* Set position to absolute */
-    top: 50%; /* Position it at 50% from the top */
-    left: 50%; /* Position it at 50% from the left */
-    transform: translate(-50%, -15%); /* Center it horizontally and vertically */
-    z-index: 1; /* Ensure it's above the image */
+    background-color: rgba(221, 221, 221, 0.8); 
     border-radius: 20%;
+    padding: 4%;
+    grid-area: backg;
+    margin-left: 7%;
+    margin-right: 7%;
+
+
 }
 
 section img {
-    width: 100%; /* Bredden av bilden kommer att sträcka sig till kanten av föräldraelementet */
+    width: 100%;
     height: auto;
-    display: block; /* Se till att bilden är ett blockelement för att undvika eventuell oönskad luft runt den */
+    display: block;
 }
 
 #gbs1{
     grid-area: gbs1;
+    background-color: #333;
 
     margin: 0;
     padding: 0;
@@ -122,19 +224,34 @@ section img {
 
 #gbs2{
     grid-area: gbs2;
+    background-color: #333;
 
-    margin: 0; /* Tar bort marginaler */
+    margin: 0;
     padding: 0;
 }
 
 #gbs3{
-grid-area: gbs3;
+    grid-area: gbs3;
+    background-color: #333;
 
-    margin: 0; /* Tar bort marginaler */
+    margin: 0; 
     padding: 0;
 }
 #gbs1 :hover{
-    color: aqua;
+    background-color: aqua;
+
+
+
+}
+
+#gbs2 :hover{
+    background-color: aqua;
+
+
+}
+
+#gbs3 :hover{
+    background-color: aqua;
 
 
 }
@@ -142,14 +259,14 @@ grid-area: gbs3;
     padding: 15px;
     border-radius: 10%;
     width: 90%;
-    height: 90%;
+    height: auto;
 }
 
 #bild2{
     padding: 15px;
     border-radius: 10%;
     width: 90%;
-    height: 90%;
+    height: auto;
 
 }
 
@@ -157,15 +274,24 @@ grid-area: gbs3;
     padding: 15px;
     border-radius: 10%;
     width: 90%;
-    height: 90%;
+    height: auto;
 
 }
 
 #tavlingsbeskrivning{
     grid-area: gsec1;
-    text-align: center;
-    background-color: #ddd;
-    padding: 20px;
+    text-align: left;
+    background-color: rgba(221, 221, 221, 0.8); 
+    border-radius: 10%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    margin-left: 7%;
+    margin-right: 7%;
+    color: black;
+
+
 }
 
 
@@ -178,40 +304,133 @@ footer {
     grid-area: foo;
 }
 
-#bildsektion {
+#psec1{
+    grid-area: psec1;
+
+}
+
+#pbild{
     width: 100%;
     height: auto;
-    margin: 0;
-    padding: 0;
-    grid-area: bsec;
 }
+
 #oversec1{
-    text-align: center;
-    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
-    padding: 20px;
-    margin-left: 15%;
 
-    position: absolute; /* Set position to absolute */
-    top: 50%; /* Position it at 50% from the top */
-    left: 50%; /* Position it at 50% from the left */
-    transform: translate(-180%, -15%); /* Center it horizontally and vertically */
-    z-index: 1; /* Ensure it's above the image */
+    background-color: rgba(221, 221, 221, 0.8); 
     border-radius: 20%;
-
+    padding: 7%;
+    grid-area: ose1;
+    margin-left: 7%;
+    margin-right: 7%;
 
 }
 
 #oversec2{
-    text-align: center;
-    background-color: rgba(221, 221, 221, 0.8); /* Add some transparency to the background color */
-    padding: 20px;
-    margin-right: 15%;
 
-    position: absolute; /* Set position to absolute */
-    top: 50%; /* Position it at 50% from the top */
-    left: 50%; /* Position it at 50% from the left */
-    transform: translate(35%, -15%); /* Center it horizontally and vertically */
-    z-index: 1; /* Ensure it's above the image */
+    background-color: rgba(221, 221, 221, 0.8);
+    padding: 7%;
+    margin-right: 7%;
+    margin-left: 7%;
+    grid-area: ose2;
     border-radius: 20%;
 }
 
+#rub1{
+    text-align: center;
+}
+
+#rub2{
+    text-align: center;
+}
+
+#ksec1{
+    grid-area: ksec1;
+    background-color: #333;
+    color: white;
+
+}
+
+#ksec2{
+    grid-area: ksec2;
+    background-color: #333;
+    color: white;
+}
+
+#tel{
+    padding: 15px;
+    border-radius: 10%;
+    width: 60%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+
+#mail{
+    padding: 15px;
+    border-radius: 10%;
+    width: 85%;
+    height: auto;
+    margin-left: 5%;
+    margin-top: 3%;
+    
+}
+
+#kont{
+    grid-area: kont;
+    text-align: center;
+    background-color: rgba(221, 221, 221, 0.8); 
+    border-radius: 30%;
+    padding: 4%;
+    color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+#kont_text1{
+    margin-left: 2%;
+    margin-right: 5%;
+    background-color: rgba(221, 221, 221, 0.8); 
+    border-radius: 20%;
+    padding: 4%;
+    color: black;
+}
+#kont_text2{
+    margin-right: 2%;
+    margin-left: 5%;
+    background-color: rgba(221, 221, 221, 0.8); 
+    border-radius: 20%;
+    padding: 4%;
+    color: black;
+}
+
+#ksec3{
+    grid-area: ksec3;
+
+
+}
+
+#ksec4{
+    grid-area: ksec4;
+}
+
+#övningsbild{
+    grid-area: marb;
+}
+
+
+#övningstext{
+    grid-area: mart;
+    margin-left: 7%;
+    margin-right: 7%;
+    background-color: rgba(221, 221, 221, 0.8);
+    border-radius: 20%;
+    padding: 6.5%;
+}
+
+#övningsbildb{
+    width: 86%;
+    border-radius: 10%;
+    height: auto;
+    margin-left: 7%;
+}

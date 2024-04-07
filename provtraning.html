@@ -6,26 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prova på - GKK</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body id="provtraning">
+<body>
   <div id="grid_wrapper3">
     <header>
         <h1>Prova på styrkelyft</h1>
       </header>
 
         <nav>
-            <ul>
-                <li><a href="index.html">Startsida</a></li>
-                <li><a href="grenar.html">Grenar</a></li>
-                <li><a href="provtraning.html">Prova på</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+          <ul class="menu">
+            <li><a class="menuItem" href="index.html">Startsida</a></li>
+            <li><a class="menuItem" href="grenar.html">Grenar</a></li>
+            <li><a class="menuItem" href="provtraning.html">Prova på</a></li>
+            <li><a class="menuItem" href="kontakt.html">Kontakt</a></li>
+          </ul>
+          <button class="hamburger">
+            
+            <i class="menuIcon material-icons">menu</i>
+            <i class="closeIcon">close</i>
+          </button>
+  
         </nav>
-        <section id="3sec1">
-      <img src="img/lyft.jpg" alt="backgrundsbild bänkpress">
-      <section>
-          <section id="oversec1">
-            <h2>Medlemskap och tävling </h2>
+        <section id="psec1">
+          <img src="img/lyft.jpg" alt="backgrundsbild bänkpress" id="pbild">
+        </section>
+
+        <section id="oversec1">
+            <h2 id="rub1">Medlemskap och tävling </h2>
             <p>Vi erbjuder individuella och familjemedlemskap för alla nivåer av styrkelyftsentusiaster. Individuellt medlemskap kostar 450kr per månad, medan familjemedlemskap är 1600kr per månad för hela familjen.
             </p>
 
@@ -36,11 +46,11 @@
               Delta i professionella tävlingar med vårt stöd. Lokala tävlingar har en avgift på 100kr per tävling, medan avgifter för nationella och internationella tävlingar varierar beroende på arrangemang och resor.
             </p>
               <p>
-              Som medlem får du också tillgång till träningsprogram, coaching och community-events. Bli en del av vår gemenskap och ta din styrketräning till nästa nivå!!</p>
+              Som medlem får du också tillgång till träningsprogram, coaching och community-events. Bli en del av vår gemenskap och ta din styrketräning till nästa nivå!! <br> <br></p>
 
           </section>
           <section id="oversec2">
-            <h2>Prova på</h2>
+            <h2 id="rub2">Prova på</h2>
             <p>
               Vill du testa på styrkelyftssporten? Hos oss erbjuder vi möjligheten att prova på och utforska styrkelyft, oavsett din erfarenhetsnivå.
             </p>
@@ -56,12 +66,14 @@
           <p>
             Oavsett om du är nyfiken nybörjare eller en erfaren atlet, är du välkommen att bli en del av vår gemenskap och ta din styrketräning till nästa nivå!            
           </p>  
-                  </section>
+          </section>
 
 
     <footer>
         <p>&copy; 2024 GKK - Styrkelyftklubb</p>
     </footer>
   </div>
+  <script src="js/hamburgare.js"></script>
+
 </body>
 </html>

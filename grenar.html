@@ -6,38 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grenar - GKK</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div id="grid_wrapper2">
     <header>
-    <h1>Välkommen till GKK - Styrkelyftklubb</h1>
+    <h1>Grenar och Tävling</h1>
     </header>
     <nav>
-      <ul>
-          
-        <li><a href="index.html">Startsida</a></li>
-        <li><a href="grenar.html">Grenar</a></li>
-        <li><a href="provtraning.html">Prova på</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
+      <ul class="menu">
+        <li><a class="menuItem" href="index.html">Startsida</a></li>
+        <li><a class="menuItem" href="grenar.html">Grenar</a></li>
+        <li><a class="menuItem" href="provtraning.html">Prova på</a></li>
+        <li><a class="menuItem" href="kontakt.html">Kontakt</a></li>
       </ul>
+      <button class="hamburger">
+        
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon">close</i>
+      </button>
+
     </nav>
 
 
       <section id="gbs1">
 
-        <img src="img/knaboj.jpg" alt="Knäböj Bild" id="bild1">
+        <a href="squat.html"><img src="img/knaboj.jpg" alt="Knäböj Bild" id="bild1"></a>
       </section>
       <section id="gbs2">
 
-        <img src="img/bankpress.jpg" alt="Bänkpress Bild" id="bild2">
+        <a href="bank.html"><img src="img/bankpress.jpg" alt="Bänkpress Bild" id="bild2"></a>
       </section>
       <section id="gbs3">
 
-        <img src="img/marklyft.jpg" alt="Marklyft Bild" id="bild3">
+        <a href="mark.html"><img src="img/marklyft.jpg" alt="Marklyft Bild" id="bild3" ></a>
       </section>
     <section id="tavlingsbeskrivning">
       <h2>Hur tävlingar går till</h2>
-      <p>Här kan du lära dig om hur styrkelyftstävlingar genomförs.</p>
+      <p>Styrkelyfttävlingar är en test av styrka, teknik och mental uthållighet. Innan tävlingen börjar genomgår deltagarna en vägning och registrering för att fastställa deras viktklasser och skapa en rättvis tävlingsmiljö. Efter detta följer en uppvärmningsprocess där deltagarna förbereder sig fysiskt och mentalt för de kommande lyften. <br><br>
+
+        Tävlingen inleds vanligtvis med knäböj, där deltagarna har tre försök att lyfta så mycket vikt som möjligt med kontrollerade knäböj. Domarna övervakar noggrant för att säkerställa att lyften utförs korrekt enligt reglerna. <br><br>
+        
+        Efter knäböjen följer bänkpress, där deltagarna ligger på en bänk och lyfter stången från en upphöjd position till full sträckning av armarna. Även här har deltagarna tre försök att visa sin styrka och teknik. <br><br>
+        
+        Slutligen avslutas tävlingen med marklyft, där deltagarna lyfter stången från marken till en upprätt position. Marklyftmomentet kräver både styrka och korrekt teknik. <br><br>
+        
+        Efter tävlingen sammanställs resultaten för att utse vinnarna i varje viktklass. De bästa resultaten premieras oftast och följt av en prisutdelning där de bästa deltagarna hyllas för sina prestationer. <br><br>
+        
+        Styrkelyfttävlingar ger deltagarna en plattform att visa upp sin styrka och teknik samt skapar en gemenskap där utövarnas strävan efter personlig utveckling och prestationer är central. <br><br>
+
+        Nedan kan du välja att läsa på mer om de individuella tävlingsgrenarna!
+           </p>
     </section>
 
 
@@ -45,5 +66,7 @@
     <p>&copy; 2024 GKK - Styrkelyftklubb</p>
   </footer>
   <div>
+    <script src="js/hamburgare.js"></script>
+
 </body>
 </html>
