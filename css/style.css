@@ -19,7 +19,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 10px 500px auto minmax(100px, 1fr);
+    grid-template-rows: 80px 80px 500px auto minmax(100px, 1fr);
     grid-template-areas:
     "header"
     "nav"
@@ -34,7 +34,7 @@ body {
     background-color: #333;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80px 10px auto auto minmax(100px, 1fr);
+    grid-template-rows: 80px 80px auto auto minmax(100px, 1fr);
     grid-template-areas:
     "header header header"
     "nav nav nav"
@@ -49,7 +49,7 @@ body {
     background-color: #333;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 10px 500px auto minmax(100px, 1fr);
+    grid-template-rows: 80px 80px 500px auto minmax(100px, 1fr);
     grid-template-areas:
     "header header"
     "nav nav"
@@ -64,7 +64,7 @@ body {
     background-color: #333;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 10px auto auto auto minmax(100px, 1fr);
+    grid-template-rows: 80px 80px auto auto auto minmax(100px, 1fr);
     grid-template-areas:
     "header header"
     "nav nav"
@@ -80,7 +80,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 10px auto auto minmax(100px, 1fr);
+    grid-template-rows: 80px 80px auto auto minmax(100px, 1fr);
     grid-template-areas:
     "header"
     "nav"
@@ -112,6 +112,8 @@ nav {
     align-items: center;
     margin: 0;
     font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    
 
     
 
@@ -119,68 +121,44 @@ nav {
 }
 
 nav ul {
-    margin: 0;
+    margin: 20px;
     padding: 0;
+    display:flex;
+    flex-direction: row;
+    list-style: none;
 
 
     
+
+
+
+    
+}
+
+.hamburger{
+    display: none;
+}
+nav ul li{
+
+    margin: 20px;
+    
+
+}
+
+.menuItem {
+    color: white;
 }
 
 
 
 nav ul li a:hover {
     color: aqua;
-    background-color: black;
+    
     
 }
 
 
-.menuItem {
-    display: block;
-    margin: 2rem 4rem;
-    font-size: 1.8rem;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .menuItem:hover {
-    text-decoration: underline;
-  }
-  
-  .hamburger {
-    position: fixed;
-    z-index: 100;
-    top: 1rem;
-    right: 1rem;
-    padding: 4px;
-    border: black solid 1px;
-    background: white;
-    cursor: pointer;
-  }
-  
-  .closeIcon {
-    display: none;
-  }
-  
-  .menu {
-    position: fixed;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99;
-    background: black;
-    color: white;
-    list-style: none;
-    padding-top: 4rem;
-    width: auto;
-  }
-  
-  .showMenu {
-    transform: translateY(0);
-  }
+
 
 #bildsektion {
     grid-area: bsec;
@@ -433,4 +411,60 @@ footer {
     border-radius: 10%;
     height: auto;
     margin-left: 7%;
+}
+
+@media screen and (max-width: 500px) {
+
+
+    .menuItem {
+        display: block;
+        margin: 0.7rem 4rem;
+        font-size: 1.8rem;
+        color: white;
+        text-decoration: none;
+      }
+      
+      .menuItem:hover {
+        text-decoration: underline;
+      }
+      
+      .hamburger {
+        position: fixed;
+        z-index: 100;
+        top: 1rem;
+        right: 1rem;
+        padding: 4px;
+        border: black solid 1px;
+        background: white;
+        cursor: pointer;
+        display: flex;
+      }
+      
+      .closeIcon {
+        display: none;
+      }
+      
+      .menu {
+        position: fixed;
+        transform: translateY(-500%);
+        transition: transform 0.2s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        background: black;
+        color: white;
+        list-style: none;
+        padding-top: 0.5rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .showMenu {
+        transform: translateY(0);
+      }
+
+
 }
